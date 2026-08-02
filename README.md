@@ -7,11 +7,18 @@ Random Claude skills i built :). Each one lives in its own folder with a `SKILL.
 ```
 claude-skills/
 ├── README.md
-└── skills/
-    ├── _template/
-    │   └── SKILL.md
-    └── larp-max/
-        └── SKILL.md
+├── skills/
+|   ├── template/
+|   │   └── blank-SKILL.md
+|   └── larp-max/
+|       └── larpmax-SKILL.md
+|
+├── prompts/
+|   ├── template/
+|   |    └── blank-prompt.md
+|   |
+... └── school/
+        └──grad-gifts.md
 ```
 
 Every skill lives under `skills/`, one folder each (compex skills have an "XSkill-explainer.md"). `~skills/template/` holds a blank `SKILL.md` to copy when starting a new one.
