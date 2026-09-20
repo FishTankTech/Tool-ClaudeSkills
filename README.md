@@ -7,6 +7,7 @@ Random Claude skills i built :). Each one lives in its own folder with a `SKILL.
 ```
 claude-skills/
 ├── README.md
+|  
 ├── skills/
 |   ├── template/
 |   │   └── blank-SKILL.md
@@ -16,7 +17,6 @@ claude-skills/
 ├── prompts/
 |   ├── template/
 |   |    └── blank-prompt.md
-|   |
 ... └── school/
         └──grad-gifts.md
 ```
@@ -37,13 +37,17 @@ Claude picks it up on its own once a request matches the skill's description. No
 
 | Skill | What it does |
 |---|---|
-| [`larp-max`](./skills/larp-max/SKILL.md) | Turns plain descriptions of real work into résumé bullets, skills-section language, and cover letter copy.  |
+| [`larp-max`](./skills/larp-max/larpmax-SKILL.md) | Turns plain descriptions of real work into résumé bullets, skills-section language, and cover letter copy — exaggerates tone and framing, never fabricates facts. |
+| [`ASD-STE100`](./skills/ASD-STE100/ASD-STE100-SKILL.md) | Rewrites text in ASD-STE100 Simplified Technical English. Explicit-invocation only (`/ste` or "use the ste skill") — won't fire on paraphrases like "simplify this." |
+| [`study-guide`](./skills/study-guide/study-guide-SKILL.md) | Expands a basic study guide into an intensive, exam-ready reference doc built for use during open-note/open-book exams. |
+| [`work-skills/Build-my-CV`](./skills/Build-my-CV/build-my-CV-SKILL.md) | Generates a personalized cover letter from a resume and job description. |
+| [`work-skills/Work-email-writer`](./skills/Work-email-writer/work-email-writer-SKILL.md) | Drafts specific, human cold outreach emails to hiring managers and founders. |
+| [`work-skills/Resume-Build-V2`](./skills/Resume-Build-V2/Resume-Build-v2-SKILL.md) | Builds targeted resume sections (summary, skills, experience) tailored to role and experience level. |
 
-More rows get added here as I build more skills.
 
-## Adding a new skill
+## Creating a new skill
 
-1. Copy `skills/_template/` to `skills/skill-name/`
+1. Copy `skills/template/` to `skills/skill-name/`
 2. Fill in `skill-name/SKILL.md`:
    - YAML frontmatter (`name`, `description`). Claude matches on the description, so it needs to be specific.
    - A `# Skill Name` header and short overview
@@ -53,3 +57,14 @@ More rows get added here as I build more skills.
    - Any hard rules the skill has to hold to
 3. Add a row to the table above
 4. Copy the folder to `/mnt/skills/user/`
+
+### Optional: Submit Pull Request
+
+If the skill might be useful to others, open a PR:
+
+1. Fork the repo and push your `skills/skill-name/` folder on a branch (separate from `main`)
+2. Make sure `SKILL.md` frontmatter is filled in and the folder doesn't include stray files (like `.DS_Store`)
+3. Open a PR against `main` with a short description of what the skill does and when it triggers
+4. Tag it with a one-line summary in the PR title, e.g. `Add skill: skill-name`
+
+Please try to keep it self-contained and make sure the description in the frontmatter is specific enough that Claude won't misfire on unrelated requests.
